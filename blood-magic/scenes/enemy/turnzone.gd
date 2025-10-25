@@ -10,3 +10,4 @@ func _on_body_entered(body: CharacterBody2D) -> void:
 	battle_instance.ai = get_parent()
 	get_tree().paused = true
 	get_tree().current_scene.visible = false
+	get_tree().battle_scene.visible = true

@@ -1,15 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://cff8mhxj5v7md"]
+[gd_scene load_steps=13 format=3 uid="uid://61gaeaw2oka"]
 
 [ext_resource type="PackedScene" uid="uid://dbkgrxyrugllw" path="res://scenes/player/player.tscn" id="2_nyb65"]
 [ext_resource type="Script" uid="uid://def32cl786ywg" path="res://scenes/modes/hud.gd" id="3_21gn6"]
-[ext_resource type="PackedScene" uid="uid://cakansakw3rha" path="res://scenes/menus/item_slot.tscn" id="3_fkndb"]
+[ext_resource type="PackedScene" path="res://scenes/menus/item_slot.tscn" id="3_fkndb"]
 [ext_resource type="PackedScene" uid="uid://dwu08pukomrt1" path="res://scenes/items/temp_potion.tscn" id="7_7h67w"]
 [ext_resource type="PackedScene" uid="uid://co4lceaouqq87" path="res://scenes/rooms/level_1.tscn" id="10_6hfbt"]
 [ext_resource type="PackedScene" uid="uid://br1flxpmbw5ak" path="res://scenes/rooms/camera_2d.tscn" id="11_2kuno"]
 [ext_resource type="PackedScene" uid="uid://b7cmd2qhjnp4o" path="res://scenes/rooms/level_3.tscn" id="11_w7ab0"]
 [ext_resource type="PackedScene" uid="uid://bdvo3na0dlg2h" path="res://scenes/rooms/level_4.tscn" id="12_l70g1"]
 [ext_resource type="PackedScene" uid="uid://bxu4rsdtevblm" path="res://scenes/rooms/level_2.tscn" id="12_w7ab0"]
-[ext_resource type="PackedScene" uid="uid://cjbc5mgm7mmel" path="res://scenes/items/temp_cake.tscn" id="12_x4rsx"]
+[ext_resource type="PackedScene" path="res://scenes/items/temp_cake.tscn" id="12_x4rsx"]
 [ext_resource type="PackedScene" uid="uid://dr8ffxsvp73mp" path="res://scenes/rooms/level_5.tscn" id="13_l70g1"]
 [ext_resource type="PackedScene" uid="uid://b50irwllqjiat" path="res://scenes/rooms/level_6.tscn" id="14_x4rsx"]
 
