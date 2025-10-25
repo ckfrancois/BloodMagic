@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://d26dxwax8qaah"]
+[gd_scene load_steps=3 format=3 uid="uid://d26dxwax8qaah"]
 
 [ext_resource type="Script" uid="uid://cjodfwl24n30d" path="res://scenes/modes/battle_manager.gd" id="1_b1qlt"]
+[ext_resource type="Texture2D" uid="uid://bcf2oohtnx8be" path="res://assets/items/redVelv.png" id="2_mhsnx"]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_b1qlt")
+
+[node name="RedVelv" type="Sprite2D" parent="."]
+position = Vector2(510, 352)
+texture = ExtResource("2_mhsnx")
