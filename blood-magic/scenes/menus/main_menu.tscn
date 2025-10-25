@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bf8thv0ipeavq"]
 
-[ext_resource type="Script" uid="uid://cxs653s4xjt17" path="res://scenes/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://cxs653s4xjt17" path="res://scripts/menus/main_menu.gd" id="1_xqga4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
 bg_color = Color(0.380776, 0.0395774, 0, 1)
@@ -38,7 +38,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_l6cm7")
+script = ExtResource("1_xqga4")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
