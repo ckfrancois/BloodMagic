@@ -1,6 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cff8mhxj5v7md"]
 
 [ext_resource type="PackedScene" uid="uid://bn2oryar6amqd" path="res://scenes/enemy/enemy.tscn" id="1_v726c"]
+[ext_resource type="Script" uid="uid://c3ni3qnlma52i" path="res://scenes/combat.gd" id="2_6hfbt"]
 [ext_resource type="PackedScene" uid="uid://dbkgrxyrugllw" path="res://scenes/player/player.tscn" id="2_nyb65"]
 [ext_resource type="Script" uid="uid://b7r62r224npa1" path="res://scripts/player/player.gd" id="3_7h67w"]
 [ext_resource type="Script" path="res://scenes/modes/healthbar_1.gd" id="3_ogqxt"]
@@ -12,6 +13,7 @@
 
 [node name="enemy2" parent="." instance=ExtResource("1_v726c")]
 position = Vector2(368, 310)
+combatActions = Array[ExtResource("2_6hfbt")]([ExtResource("3_2kuno"), ExtResource("4_w7ab0"), ExtResource("5_l70g1")])
 
 [node name="Player" parent="." instance=ExtResource("2_nyb65")]
 position = Vector2(61, 88)
@@ -19,6 +21,7 @@ script = ExtResource("3_7h67w")
 
 [node name="enemy" parent="." instance=ExtResource("1_v726c")]
 position = Vector2(603, 97)
+combatActions = Array[ExtResource("2_6hfbt")]([ExtResource("3_2kuno"), ExtResource("4_w7ab0"), ExtResource("5_l70g1")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

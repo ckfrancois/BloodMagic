@@ -13,6 +13,8 @@ signal healthChanged4
 var currentHealth:Array[int] = [0,0,0,0] # Starting values
 var maxHealth:Array[int] = [100,100,100,100] # Placeholder values
 
+@export var combatActions: Array[combat]
+
 func _ready():
 	pass
 
@@ -31,5 +33,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+func _combat_action(action : combat , enemy : Node2D):
+	pass
 func collectItem(data: Dictionary):
 	emit_signal("itemCollected", data)

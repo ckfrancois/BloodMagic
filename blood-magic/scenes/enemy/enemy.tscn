@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn2oryar6amqd"]
+[gd_scene load_steps=5 format=3 uid="uid://bn2oryar6amqd"]
 
+[ext_resource type="Script" uid="uid://3btteotqdb8p" path="res://scenes/enemy/enemy.gd" id="1_40wdo"]
 [ext_resource type="Texture2D" uid="uid://mm8ik78skmd0" path="res://assets/misc/icon.svg" id="1_a3pup"]
 [ext_resource type="PackedScene" uid="uid://bwhxbjlgkgmoy" path="res://scripts/enemy/turnzone.tscn" id="2_40wdo"]
 
@@ -8,6 +9,7 @@ size = Vector2(111, 109)
 
 [node name="enemy" type="Node2D"]
 position = Vector2(1, 0)
+script = ExtResource("1_40wdo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_a3pup")

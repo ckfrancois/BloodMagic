@@ -35,19 +35,21 @@ func act(index):
 		var wait_time = randf_range(0.5, 1.5)
 		await get_tree().create_timer(wait_time).timeout
 		
-		# Cast combat action
+		var action_to_cast = ai_decide_combat_action()
+		ai.combat_action(action_to_cast, player) # make this random
+		
 		await get_tree().create_timer(0.5).timeout
 		next_turn()
 	# Player
 	else:
 		print("Player turn has begun")
 
-func player_combat_action (action):
+func player_combat_action (action : combat):
 	#player.combat_action(action, enemy)
 	# disable player ui
 	await get_tree().create_timer(0.5).timeout
 	next_turn()
 	
-func ai_decide_combat_action ():
-	pass
+func ai_decide_combat_action () -> combat:
+	return null
 	
