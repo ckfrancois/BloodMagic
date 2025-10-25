@@ -35,8 +35,9 @@ func act(index):
 		var wait_time = randf_range(0.5, 1.5)
 		await get_tree().create_timer(wait_time).timeout
 		
-		var action_to_cast = ai_decide_combat_action()
-		ai.combat_action(action_to_cast, player) # make this random
+		var action_to_cast:combat = ai.combat_action(player) # make this random
+		
+		print(action_to_cast.display_name)
 		
 		await get_tree().create_timer(0.5).timeout
 		next_turn()
@@ -53,3 +54,16 @@ func player_combat_action (action : combat):
 func ai_decide_combat_action () -> combat:
 	return null
 	
+
+func _on_button_1_pressed() -> void:
+	print("Button 1")
+
+func _on_button_2_pressed() -> void:
+	pass # Replace with function body.
+
+func _on_button_3_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_button_4_pressed() -> void:
+	pass # Replace with function body.
