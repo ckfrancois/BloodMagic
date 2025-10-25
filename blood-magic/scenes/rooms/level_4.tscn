@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdvo3na0dlg2h"]
+
+[ext_resource type="PackedScene" uid="uid://dwu08pukomrt1" path="res://scenes/items/temp_potion.tscn" id="1_w2080"]
+[ext_resource type="PackedScene" uid="uid://bn2oryar6amqd" path="res://scenes/enemy/enemy.tscn" id="2_207eh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvegh"]
+size = Vector2(1152, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnt83"]
+size = Vector2(96, 497)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1jo5"]
+size = Vector2(104, 335)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ql0it"]
+size = Vector2(796, 83.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqxiu"]
+size = Vector2(73, 158)
+
+[node name="Level4" type="Node2D"]
+
+[node name="Wall1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1"]
+position = Vector2(576, 45)
+shape = SubResource("RectangleShape2D_mvegh")
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+position = Vector2(0, 613)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(576, 20)
+shape = SubResource("RectangleShape2D_mvegh")
+
+[node name="Wall3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
+position = Vector2(51, 338.5)
+shape = SubResource("RectangleShape2D_hnt83")
+
+[node name="Wall4" type="StaticBody2D" parent="."]
+position = Vector2(571, 282)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
+position = Vector2(531, 137)
+shape = SubResource("RectangleShape2D_a1jo5")
+
+[node name="Obstacle1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle1"]
+position = Vector2(648, 301)
+shape = SubResource("RectangleShape2D_ql0it")
+
+[node name="Obstacle2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle2"]
+position = Vector2(293, 599)
+shape = SubResource("RectangleShape2D_wqxiu")
+
+[node name="Obstacle3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle3"]
+position = Vector2(765, 339)
+shape = SubResource("RectangleShape2D_wqxiu")
+
+[node name="TempPotion" parent="." instance=ExtResource("1_w2080")]
+position = Vector2(935, 477)
+
+[node name="enemy" parent="." instance=ExtResource("2_207eh")]
+position = Vector2(764, 501)
+
+[node name="enemy2" parent="." instance=ExtResource("2_207eh")]
+position = Vector2(299, 438)
+
+[node name="enemy3" parent="." instance=ExtResource("2_207eh")]
+position = Vector2(299, 171)
