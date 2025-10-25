@@ -17,3 +17,5 @@ texture = ExtResource("1_a3pup")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="turnzone"]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_epypp")
+
+[connection signal="body_entered" from="turnzone" to="turnzone" method="_on_body_entered"]

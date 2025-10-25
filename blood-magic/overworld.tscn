@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cff8mhxj5v7md"]
+
+[ext_resource type="PackedScene" uid="uid://bn2oryar6amqd" path="res://scenes/enemy/enemy.tscn" id="1_v726c"]
+[ext_resource type="PackedScene" uid="uid://dbkgrxyrugllw" path="res://scenes/player/player.tscn" id="2_nyb65"]
+
+[node name="Overworld" type="Node2D"]
+
+[node name="enemy" parent="." instance=ExtResource("1_v726c")]
+position = Vector2(603, 97)
+
+[node name="Player" parent="." instance=ExtResource("2_nyb65")]
+position = Vector2(61, 88)
+
+[node name="enemy2" parent="." instance=ExtResource("1_v726c")]
+position = Vector2(368, 310)
