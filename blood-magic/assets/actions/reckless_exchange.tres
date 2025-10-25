@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="combat" load_steps=2 format=3 uid="uid://c5veuha86g3sw"]
+
+[ext_resource type="Script" uid="uid://c3ni3qnlma52i" path="res://scenes/combat.gd" id="1_hhkht"]
+
+[resource]
+script = ExtResource("1_hhkht")
+display_name = ""
+description = ""
+damage = 20
+heal = 0
+recoil = 13
+base_weight = 100
+metadata/_custom_type_script = "uid://c3ni3qnlma52i"

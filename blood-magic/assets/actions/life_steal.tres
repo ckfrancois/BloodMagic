@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="combat" load_steps=2 format=3 uid="uid://bvnbcxmhpyhx0"]
+
+[ext_resource type="Script" uid="uid://c3ni3qnlma52i" path="res://scenes/combat.gd" id="1_5yrr3"]
+
+[resource]
+script = ExtResource("1_5yrr3")
+display_name = "Life Steal"
+description = "Steals 4 blood."
+damage = 4
+heal = 4
+recoil = 0
+base_weight = 100
+metadata/_custom_type_script = "uid://c3ni3qnlma52i"

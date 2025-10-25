@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="combat" load_steps=2 format=3 uid="uid://1t0a0rn30cqi"]
+
+[ext_resource type="Script" uid="uid://c3ni3qnlma52i" path="res://scenes/combat.gd" id="1_cgwlb"]
+
+[resource]
+script = ExtResource("1_cgwlb")
+display_name = "Drain"
+description = "Deals 7 damage."
+damage = 7
+heal = 0
+recoil = 0
+base_weight = 100
+metadata/_custom_type_script = "uid://c3ni3qnlma52i"
