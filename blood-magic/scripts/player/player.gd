@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal itemCollected(Dictionary)
+
 const SPEED = 300.0
 
 # Whenever health is changed for a cultist, emit a corresponding signal
@@ -28,3 +30,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	move_and_slide()
+
+func collectItem(data: Dictionary):
+	emit_signal("itemCollected", data)
