@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://c16brdt8xfrnq"]
+
+[ext_resource type="PackedScene" uid="uid://bn2oryar6amqd" path="res://scenes/enemy/enemy.tscn" id="1_hrg84"]
+[ext_resource type="PackedScene" uid="uid://cv0b1vr148hjf" path="res://scenes/player/player.tscn" id="2_xm62q"]
+[ext_resource type="PackedScene" uid="uid://d1x10vb6wpiyw" path="res://scenes/misc/item.tscn" id="3_xm62q"]
+[ext_resource type="Script" uid="uid://dwllomfxl80n2" path="res://scripts/misc/health_bar_1.gd" id="4_mywaq"]
+[ext_resource type="Script" uid="uid://iwsyknl4lorg" path="res://scripts/misc/health_bar_2.gd" id="5_afiok"]
+[ext_resource type="Script" uid="uid://cj45d71k2g3a6" path="res://scripts/misc/health_bar_3.gd" id="6_q7ba8"]
+[ext_resource type="Script" uid="uid://b6kt778w1kvbj" path="res://scripts/misc/health_bar_4.gd" id="7_m6jvx"]
+
+[node name="gameplay" type="Node2D"]
+
+[node name="enemy" parent="." instance=ExtResource("1_hrg84")]
+position = Vector2(961, 319)
+
+[node name="Player" parent="." instance=ExtResource("2_xm62q")]
+position = Vector2(728, 325)
+
+[node name="item" parent="." instance=ExtResource("3_xm62q")]
+position = Vector2(857, 473)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar1" type="ProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+offset_left = 246.0
+offset_top = 47.0
+offset_right = 465.0
+offset_bottom = 74.0
+script = ExtResource("4_mywaq")
+player = NodePath("../../Player")
+
+[node name="HealthBar2" type="ProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+offset_left = 247.0
+offset_top = 74.0
+offset_right = 466.0
+offset_bottom = 101.0
+script = ExtResource("5_afiok")
+player = NodePath("../../Player")
+
+[node name="HealthBar3" type="ProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+offset_left = 246.0
+offset_top = 104.0
+offset_right = 465.0
+offset_bottom = 131.0
+script = ExtResource("6_q7ba8")
+player = NodePath("../../Player")
+
+[node name="HealthBar4" type="ProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+offset_left = 247.0
+offset_top = 131.0
+offset_right = 466.0
+offset_bottom = 158.0
+script = ExtResource("7_m6jvx")
+player = NodePath("../../Player")
