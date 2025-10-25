@@ -2,50 +2,52 @@
 
 [ext_resource type="PackedScene" uid="uid://bn2oryar6amqd" path="res://scenes/enemy/enemy.tscn" id="1_v726c"]
 [ext_resource type="PackedScene" uid="uid://dbkgrxyrugllw" path="res://scenes/player/player.tscn" id="2_nyb65"]
-[ext_resource type="PackedScene" uid="uid://ble2cqj2vv6ld" path="res://scenes/menus/item_slot.tscn" id="3_ogqxt"]
-[ext_resource type="Script" uid="uid://def32cl786ywg" path="res://scenes/modes/hud.gd" id="3_rds72"]
-[ext_resource type="PackedScene" uid="uid://dwu08pukomrt1" path="res://scenes/items/temp_potion.tscn" id="4_1hk4f"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogqxt"]
-size = Vector2(1153, 115)
+[ext_resource type="Script" uid="uid://dk6yitj8oiyyq" path="res://scenes/modes/healthbar_1.gd" id="3_ogqxt"]
+[ext_resource type="Script" uid="uid://disxi3r3egrph" path="res://scenes/modes/health_bar_2.gd" id="4_w3juc"]
+[ext_resource type="Script" uid="uid://cfwbk31ntk3ad" path="res://scenes/modes/health_bar_3.gd" id="5_7h67w"]
+[ext_resource type="Script" uid="uid://b2cm7dy8x7ubv" path="res://scenes/modes/health_bar_4.gd" id="6_fkndb"]
 
 [node name="Overworld" type="Node2D"]
 
-[node name="enemy" parent="." instance=ExtResource("1_v726c")]
-position = Vector2(956, 393)
+[node name="enemy2" parent="." instance=ExtResource("1_v726c")]
+position = Vector2(368, 310)
 
 [node name="Player" parent="." instance=ExtResource("2_nyb65")]
-position = Vector2(129, 350)
+position = Vector2(61, 88)
 
-[node name="enemy2" parent="." instance=ExtResource("1_v726c")]
-position = Vector2(710, 306)
+[node name="enemy" parent="." instance=ExtResource("1_v726c")]
+position = Vector2(603, 97)
 
-[node name="HUD" type="CanvasLayer" parent="."]
-script = ExtResource("3_rds72")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HUD Background" type="ColorRect" parent="HUD"]
-offset_right = 1160.0
-offset_bottom = 115.0
-color = Color(0.142858, 0.142858, 0.142858, 1)
+[node name="HealthBar1" type="ProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+offset_left = 14.0
+offset_top = 445.0
+offset_right = 158.0
+offset_bottom = 472.0
+script = ExtResource("3_ogqxt")
+player = NodePath("../../Player")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="HUD/HUD Background"]
+[node name="HealthBar2" type="ProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+offset_left = 6.0
+offset_top = 483.0
+offset_right = 155.0
+offset_bottom = 510.0
+script = ExtResource("4_w3juc")
+player = NodePath("../../Player")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HUD/HUD Background/StaticBody2D"]
-position = Vector2(576.5, 57.5)
-shape = SubResource("RectangleShape2D_ogqxt")
+[node name="HealthBar3" type="ProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+offset_left = 9.0
+offset_top = 519.0
+offset_right = 146.0
+offset_bottom = 546.0
+script = ExtResource("5_7h67w")
+player = NodePath("../../Player")
 
-[node name="ItemSlot" parent="HUD" instance=ExtResource("3_ogqxt")]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -121.0
-offset_top = -636.0
-offset_right = 7.0
-offset_bottom = -508.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="TempPotion" parent="." instance=ExtResource("4_1hk4f")]
-position = Vector2(454, 521)
+[node name="HealthBar4" type="ProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+offset_left = 17.0
+offset_top = 558.0
+offset_right = 142.0
+offset_bottom = 585.0
+script = ExtResource("6_fkndb")
+player = NodePath("../../Player")

@@ -1,0 +1,53 @@
+extends Node2D
+
+
+@export var player : Node2D
+@export var ai : Node2D
+
+var turn_order = [0, 1, 2, 3, 4] # enemy and players
+var current_turn_index = 0 # starts at enemy, can randomize later
+
+
+var character : bool = false
+
+var game_over : bool = false
+
+func _ready():
+	next_turn()
+
+func next_turn():
+	if game_over:
+		return
+	
+	# Allow the character to act
+	act(turn_order[current_turn_index])
+	
+	# Go to the next character
+	if turn_order.size() - 1 == current_turn_index:
+		current_turn_index = 0
+	else:
+		current_turn_index += 1
+
+func act(index):
+	# Enemy
+	if current_turn_index == 0:
+		print("Enemy turn has begun")
+		var wait_time = randf_range(0.5, 1.5)
+		await get_tree().create_timer(wait_time).timeout
+		
+		# Cast combat action
+		await get_tree().create_timer(0.5).timeout
+		next_turn()
+	# Player
+	else:
+		print("Player turn has begun")
+
+func player_combat_action (action):
+	#player.combat_action(action, enemy)
+	# disable player ui
+	await get_tree().create_timer(0.5).timeout
+	next_turn()
+	
+func ai_decide_combat_action ():
+	pass
+	
