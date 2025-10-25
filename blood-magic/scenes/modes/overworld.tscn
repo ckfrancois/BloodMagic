@@ -1,15 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://cff8mhxj5v7md"]
+[gd_scene load_steps=8 format=3 uid="uid://cff8mhxj5v7md"]
 
 [ext_resource type="PackedScene" uid="uid://bn2oryar6amqd" path="res://scenes/enemy/enemy.tscn" id="1_v726c"]
 [ext_resource type="Script" uid="uid://c3ni3qnlma52i" path="res://scenes/combat.gd" id="2_6hfbt"]
 [ext_resource type="PackedScene" uid="uid://dbkgrxyrugllw" path="res://scenes/player/player.tscn" id="2_nyb65"]
-[ext_resource type="Resource" uid="uid://1t0a0rn30cqi" path="res://assets/actions/drain.tres" id="3_2kuno"]
-[ext_resource type="Script" uid="uid://dk6yitj8oiyyq" path="res://scenes/modes/healthbar_1.gd" id="3_ogqxt"]
-[ext_resource type="Script" uid="uid://disxi3r3egrph" path="res://scenes/modes/health_bar_2.gd" id="4_w3juc"]
-[ext_resource type="Resource" uid="uid://bvnbcxmhpyhx0" path="res://assets/actions/life_steal.tres" id="4_w7ab0"]
-[ext_resource type="Script" uid="uid://cfwbk31ntk3ad" path="res://scenes/modes/health_bar_3.gd" id="5_7h67w"]
-[ext_resource type="Resource" uid="uid://c5veuha86g3sw" path="res://assets/actions/reckless_exchange.tres" id="5_l70g1"]
-[ext_resource type="Script" uid="uid://b2cm7dy8x7ubv" path="res://scenes/modes/health_bar_4.gd" id="6_fkndb"]
+[ext_resource type="Script" uid="uid://b7r62r224npa1" path="res://scripts/player/player.gd" id="3_7h67w"]
+[ext_resource type="Script" path="res://scenes/modes/healthbar_1.gd" id="3_ogqxt"]
+[ext_resource type="Script" path="res://scenes/modes/health_bar_2.gd" id="4_w3juc"]
+[ext_resource type="Script" path="res://scenes/modes/health_bar_3.gd" id="5_7h67w"]
+[ext_resource type="Script" path="res://scenes/modes/health_bar_4.gd" id="6_fkndb"]
 
 [node name="Overworld" type="Node2D"]
 
@@ -19,6 +17,7 @@ combatActions = Array[ExtResource("2_6hfbt")]([ExtResource("3_2kuno"), ExtResour
 
 [node name="Player" parent="." instance=ExtResource("2_nyb65")]
 position = Vector2(61, 88)
+script = ExtResource("3_7h67w")
 
 [node name="enemy" parent="." instance=ExtResource("1_v726c")]
 position = Vector2(603, 97)
