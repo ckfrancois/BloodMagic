@@ -13,6 +13,7 @@ var character : bool = false
 var game_over : bool = false
 
 func _ready():
+	
 	next_turn()
 
 func next_turn():
@@ -35,17 +36,19 @@ func act(index):
 		var wait_time = randf_range(0.5, 1.5)
 		await get_tree().create_timer(wait_time).timeout
 		
-		var action_to_cast = ai_decide_combat_action()
-		ai.combat_action(action_to_cast, player) # make this random
+		#var action_to_cast = ai_decide_combat_action()
+		var action:combat = ai.combat_action(player) # make this random
+		print(action.display_name)
 		
 		await get_tree().create_timer(0.5).timeout
 		next_turn()
 	# Player
 	else:
 		print("Player turn has begun")
+		# Enable player ui
 
 func player_combat_action (action : combat):
-	#player.combat_action(action, enemy)
+	# player.combat_action(action, enemy)
 	# disable player ui
 	await get_tree().create_timer(0.5).timeout
 	next_turn()
@@ -53,3 +56,16 @@ func player_combat_action (action : combat):
 func ai_decide_combat_action () -> combat:
 	return null
 	
+
+
+func _on_action_1_pressed() -> void:
+	print("Button 1")
+
+func _on_action_2_pressed() -> void:
+	print("Button 2")
+
+func _on_action_3_pressed() -> void:
+	print("Button 3")
+
+func _on_action_4_pressed() -> void:
+	print("Button 4")

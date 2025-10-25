@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=3 format=3 uid="uid://ble2cqj2vv6ld"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://ct1t0kjwyivod"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://mm8ik78skmd0" path="res://assets/misc/icon.svg" id="1_8gnh1"]
 [ext_resource type="Script" uid="uid://ef2iihg5yfq5" path="res://scripts/items/itemSlot.gd" id="2_6cfwh"]
