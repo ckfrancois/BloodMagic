@@ -19,6 +19,8 @@ var numCultist:=0
 func _ready():
 	collectCultist({"currHealth": 10,
 	"maxHealth":10})
+	collectCultist({"currHealth": 25,
+	"maxHealth":25})
 
 func _physics_process(delta: float) -> void:
 	var moveX := Input.get_axis("Left", "Right")
@@ -33,19 +35,29 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
-	
 	move_and_slide()
+	
+	if Input.is_action_just_pressed("Up"):
+		cultistHurt()
 
 func _combat_action(action : combat , enemy : Node2D):
 	pass
+
 func collectItem(data: Dictionary):
 	emit_signal("itemCollected", data)
-
-func useItem():
-	pass
+	heldItem = data
+	
 
 func collectCultist(data: Dictionary):
 	while !cultist[numCultist].is_empty():
 		numCultist += 1
 	cultist[numCultist] = data
-	emit_signal("healthChanged", data, numCultist)
+	emit_signal("healthChanged", cultist[numCultist], numCultist)
+
+func cultistHurt():
+	print(numCultist)
+	var x = randi_range(0,numCultist)
+	cultist[x]["currHealth"] -= 1
+	emit_signal("healthChanged", cultist[x], x)
+	
+	

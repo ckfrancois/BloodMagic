@@ -5,6 +5,7 @@ extends Area2D
 	"type": "single",
 	"heal amount": 20,
 	"icon": preload("res://assets/items/tempPotion.png"),
+	"Description": "Heals one follower"
 }
 
 func _on_body_entered(body: CharacterBody2D) -> void:
