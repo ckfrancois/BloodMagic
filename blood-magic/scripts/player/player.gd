@@ -60,4 +60,6 @@ func cultistHurt():
 	cultist[x]["currHealth"] -= 1
 	emit_signal("healthChanged", cultist[x], x)
 	
-	
+
+func use_item():
+	collectItem({})

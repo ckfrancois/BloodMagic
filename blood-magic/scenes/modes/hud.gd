@@ -41,7 +41,10 @@ func _on_item_collected(itemData: Dictionary):
 
 func updateItem(itemData: Dictionary):
 	itemSlot.setItem(itemData)
-	itemDesc.text = itemData["Description"]
+	if itemData.is_empty():
+		itemDesc.text = ""
+	else:
+		itemDesc.text = itemData["Description"]
 
 func _on_health_changed(data: Dictionary, num: int):
 	updateHealth(data, num)
@@ -63,6 +66,7 @@ func heal_one(i: int):
 	if !player.cultist[i].is_empty():
 		player.cultist[i]["currHealth"] = min(player.cultist[i]["maxHealth"], player.cultist[i]["currHealth"] + player.heldItem["heal amount"])
 		updateHealth(player.cultist[i],i)
+	player.use_item()
 
 func show_selection_numbers():
 	pass
