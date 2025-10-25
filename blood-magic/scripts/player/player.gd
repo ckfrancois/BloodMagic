@@ -2,6 +2,17 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 
+# Whenever health is changed for a cultist, emit a corresponding signal
+signal healthChanged1
+signal healthChanged2
+signal healthChanged3
+signal healthChanged4
+
+var currentHealth:Array[int] = [0,0,0,0] # Starting values
+var maxHealth:Array[int] = [100,100,100,100] # Placeholder values
+
+func _ready():
+	pass
 
 func _physics_process(delta: float) -> void:
 	var moveX := Input.get_axis("Left", "Right")
