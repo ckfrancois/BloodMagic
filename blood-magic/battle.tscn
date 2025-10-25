@@ -1,3 +1,3 @@
-[gd_scene format=3 uid="uid://d26dxwax8qaah"]
+[gd_scene load_steps=0 format=3 uid="uid://d26dxwax8qaah"]
 
 [node name="Battle" type="Node2D"]
