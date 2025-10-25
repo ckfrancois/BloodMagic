@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ble2cqj2vv6ld"]
+
+[ext_resource type="Texture2D" uid="uid://mm8ik78skmd0" path="res://assets/misc/icon.svg" id="1_8gnh1"]
+[ext_resource type="Script" uid="uid://ef2iihg5yfq5" path="res://scripts/items/itemSlot.gd" id="2_6cfwh"]
+
+[node name="ItemSlot" type="TextureRect"]
+offset_left = -44.0
+offset_top = -47.0
+offset_right = 84.0
+offset_bottom = 81.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_8gnh1")
+expand_mode = 3
+script = ExtResource("2_6cfwh")
+emptyTexture = ExtResource("1_8gnh1")
