@@ -8,6 +8,13 @@ radius = 37.0135
 
 [node name="TempPotion" type="Area2D"]
 script = ExtResource("1_ws5s1")
+itemData = {
+"Description": "Heals one follower",
+"heal amount": 5,
+"icon": ExtResource("2_xjodt"),
+"name": "TempPotion",
+"type": "single"
+}
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.035, 0.035)
