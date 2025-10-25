@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://co4lceaouqq87"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvegh"]
+size = Vector2(1152, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnt83"]
+size = Vector2(96, 497)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1jo5"]
+size = Vector2(104, 160)
+
+[node name="Level1" type="Node2D"]
+
+[node name="Wall1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1"]
+position = Vector2(576, 45)
+shape = SubResource("RectangleShape2D_mvegh")
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+position = Vector2(0, 613)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(576, 20)
+shape = SubResource("RectangleShape2D_mvegh")
+
+[node name="Wall3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
+position = Vector2(51, 338.5)
+shape = SubResource("RectangleShape2D_hnt83")
+
+[node name="Wall4" type="StaticBody2D" parent="."]
+position = Vector2(571, 282)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
+position = Vector2(529, -112)
+shape = SubResource("RectangleShape2D_a1jo5")
+
+[node name="Wall5" type="StaticBody2D" parent="."]
+position = Vector2(571, 282)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall5"]
+position = Vector2(529, 221)
+shape = SubResource("RectangleShape2D_a1jo5")
