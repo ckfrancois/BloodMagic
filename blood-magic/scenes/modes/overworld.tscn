@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cff8mhxj5v7md"]
+[gd_scene load_steps=15 format=3 uid="uid://cff8mhxj5v7md"]
 
 [ext_resource type="PackedScene" uid="uid://dbkgrxyrugllw" path="res://scenes/player/player.tscn" id="2_nyb65"]
 [ext_resource type="Script" uid="uid://def32cl786ywg" path="res://scenes/modes/hud.gd" id="3_21gn6"]
@@ -10,7 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://co4lceaouqq87" path="res://scenes/rooms/level_1.tscn" id="10_6hfbt"]
 [ext_resource type="PackedScene" uid="uid://br1flxpmbw5ak" path="res://scenes/rooms/camera_2d.tscn" id="11_2kuno"]
 [ext_resource type="PackedScene" uid="uid://b7cmd2qhjnp4o" path="res://scenes/rooms/level_3.tscn" id="11_w7ab0"]
+[ext_resource type="PackedScene" uid="uid://bdvo3na0dlg2h" path="res://scenes/rooms/level_4.tscn" id="12_l70g1"]
 [ext_resource type="PackedScene" uid="uid://bxu4rsdtevblm" path="res://scenes/rooms/level_2.tscn" id="12_w7ab0"]
+[ext_resource type="PackedScene" uid="uid://dr8ffxsvp73mp" path="res://scenes/rooms/level_5.tscn" id="13_l70g1"]
+[ext_resource type="PackedScene" uid="uid://b50irwllqjiat" path="res://scenes/rooms/level_6.tscn" id="14_x4rsx"]
 
 [node name="Overworld" type="Node2D"]
 
@@ -56,7 +59,7 @@ offset_right = 1185.0
 offset_bottom = 135.0
 
 [node name="Player" parent="." instance=ExtResource("2_nyb65")]
-position = Vector2(205, 329)
+position = Vector2(205, 358)
 
 [node name="Camera2D" parent="." instance=ExtResource("11_2kuno")]
 
@@ -66,4 +69,13 @@ position = Vector2(205, 329)
 position = Vector2(1155, -1)
 
 [node name="Level3" parent="." instance=ExtResource("11_w7ab0")]
-position = Vector2(1168, -655)
+position = Vector2(1175, -642)
+
+[node name="Level4" parent="." instance=ExtResource("12_l70g1")]
+position = Vector2(22, -652)
+
+[node name="Level5" parent="." instance=ExtResource("13_l70g1")]
+position = Vector2(2325, -641)
+
+[node name="Level6" parent="." instance=ExtResource("14_x4rsx")]
+position = Vector2(2327, 6)
