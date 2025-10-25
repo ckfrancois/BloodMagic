@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn2oryar6amqd"]
+
+[ext_resource type="Texture2D" uid="uid://mm8ik78skmd0" path="res://assets/misc/icon.svg" id="1_a3pup"]
+[ext_resource type="PackedScene" uid="uid://bwhxbjlgkgmoy" path="res://scripts/enemy/turnzone.tscn" id="2_40wdo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(111, 109)
+
+[node name="enemy" type="Node2D"]
+position = Vector2(1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_a3pup")
+
+[node name="turnzone" parent="." instance=ExtResource("2_40wdo")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="turnzone"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_epypp")
