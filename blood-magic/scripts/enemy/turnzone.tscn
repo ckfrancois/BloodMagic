@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwhxbjlgkgmoy"]
+
+[ext_resource type="Script" uid="uid://cn6e6nvhwsani" path="res://scenes/enemy/turnzone.gd" id="1_w1oqc"]
+
+[node name="turnzone" type="Area2D"]
+script = ExtResource("1_w1oqc")
