@@ -2,8 +2,8 @@ extends Area2D
 
 @export var cultist_data := {
 	"name": "",
-	"currHealth": 0,
-	"maxHealth": 0,
+	"currHealth": 27,
+	"maxHealth": 27,
 	"attacks": ["res://assets/actions/blood_shot.tres", "res://assets/actions/life_steal.tres", "res://assets/actions/drain.tres", "res://assets/actions/reckless_exchange.tres"]}
 
 func _on_body_entered(body: CharacterBody2D) -> void:

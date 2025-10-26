@@ -51,13 +51,13 @@ func _on_health_changed(data: Dictionary, num: int):
 	updateHealth(data, num)
 
 func updateHealth(data: Dictionary, num: int):
-	cultHealth[num].value = data["currHealth"]
 	cultHealth[num].max_value = data["maxHealth"]
+	cultHealth[num].value = data["currHealth"]
 	cultHealth[num].visible = true
 
 func update_health(num: int):
-	cultHealth[num].value = player.cultist[num]["currHealth"]
 	cultHealth[num].max_value = player.cultist[num]["maxHealth"]
+	cultHealth[num].value = player.cultist[num]["currHealth"]
 	cultHealth[num].visible = true
 
 func heal_all():

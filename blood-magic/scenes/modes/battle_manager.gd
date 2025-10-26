@@ -56,6 +56,7 @@ func act(index):
 		
 		var action_to_cast:combat = ai.combat_action()
 		var cultist_to_attack:int = ai.choose_cultist(player, number_of_cultists - deaths)
+		cultist_to_attack = randi_range(1, number_of_cultists - 1)
 		
 		# Do the action
 		print(action_to_cast.display_name)
@@ -72,21 +73,11 @@ func act(index):
 			game_over_fully()
 		
 		await get_tree().create_timer(0.5).timeout
-		emit_signal("turnIndex")
 		next_turn()
 	# Player
 	else:
 		print("Player turn has begun ", index)
 		player_combat_action(index)
-		
-		# Check if player died
-		if player.cultist[index - 1]["currHealth"] <= 0:
-			deaths += 1
-		
-		# If all party members are dead, game over
-		if deaths >= number_of_cultists:
-			game_over = true
-			game_over_fully()
 
 func game_over_fully():
 	print("Game OVER!!!")
@@ -97,6 +88,7 @@ func ai_action(action:combat, cultist_index:int):
 	ai.currHealth += action.heal;
 	ai.currHealth -= action.recoil
 	player.emit_signal("healthUpdate", cultist_index)
+	emit_signal("turnIndex")
 	print(player.cultist[cultist_index]["currHealth"], "for" , cultist_index)
 
 func player_combat_action(index : int):
@@ -125,8 +117,20 @@ func player_action (action:combat, index:int):
 	player.cultist[index]["currHealth"] -= action.recoil
 	print(player.cultist[index]["currHealth"], " for ", index)
 	print(current_turn_index)
+		
+	# Check if player died
+	if player.cultist[index - 1]["currHealth"] <= 0:
+		deaths += 1
+	
+	# If all party members are dead, game over
+	if deaths >= number_of_cultists:
+		game_over = true
+		game_over_fully()
+	
 	player.emit_signal("healthUpdate", index)
 	emit_signal("turnIndex")
+	
+	next_turn()
 
 func _on_button_1_pressed() -> void:
 	player_action(current_moves[0], current_turn_index - 1)
@@ -136,7 +140,6 @@ func _on_button_1_pressed() -> void:
 		b.disabled = true
 	
 	await get_tree().create_timer(0.5).timeout
-	next_turn()
 
 func _on_button_2_pressed() -> void:
 	player_action(current_moves[1], current_turn_index - 1)
@@ -146,7 +149,6 @@ func _on_button_2_pressed() -> void:
 		b.disabled = true
 	
 	await get_tree().create_timer(0.5).timeout
-	next_turn()
 
 func _on_button_3_pressed() -> void:
 	player_action(current_moves[2], current_turn_index - 1)
@@ -156,8 +158,6 @@ func _on_button_3_pressed() -> void:
 		b.disabled = true
 	
 	await get_tree().create_timer(0.5).timeout
-	next_turn()
-
 
 func _on_button_4_pressed() -> void:
 	player_action(current_moves[3], current_turn_index - 1)
@@ -167,4 +167,3 @@ func _on_button_4_pressed() -> void:
 		b.disabled = true
 	
 	await get_tree().create_timer(0.5).timeout
-	next_turn()
