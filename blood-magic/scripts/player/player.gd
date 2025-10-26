@@ -47,6 +47,8 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
+	if cultist.size() == 4:
+		get_tree().change_scene_to_file("res://scenes/menus/win.tscn")
 
 func _combat_action(action : combat , enemy : Node2D):
 	pass
