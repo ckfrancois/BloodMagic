@@ -1,15 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://61gaeaw2oka"]
+[gd_scene load_steps=11 format=3 uid="uid://cff8mhxj5v7md"]
 
 [ext_resource type="PackedScene" uid="uid://dbkgrxyrugllw" path="res://scenes/player/player.tscn" id="2_nyb65"]
 [ext_resource type="Script" uid="uid://def32cl786ywg" path="res://scenes/modes/hud.gd" id="3_21gn6"]
-[ext_resource type="PackedScene" uid="uid://dtxx1yrrkidw6" path="res://scenes/menus/item_slot.tscn" id="3_fkndb"]
-[ext_resource type="PackedScene" uid="uid://dwu08pukomrt1" path="res://scenes/items/temp_potion.tscn" id="7_7h67w"]
+[ext_resource type="PackedScene" uid="uid://cakansakw3rha" path="res://scenes/menus/item_slot.tscn" id="3_fkndb"]
 [ext_resource type="PackedScene" uid="uid://co4lceaouqq87" path="res://scenes/rooms/level_1.tscn" id="10_6hfbt"]
 [ext_resource type="PackedScene" uid="uid://br1flxpmbw5ak" path="res://scenes/rooms/camera_2d.tscn" id="11_2kuno"]
 [ext_resource type="PackedScene" uid="uid://b7cmd2qhjnp4o" path="res://scenes/rooms/level_3.tscn" id="11_w7ab0"]
 [ext_resource type="PackedScene" uid="uid://bdvo3na0dlg2h" path="res://scenes/rooms/level_4.tscn" id="12_l70g1"]
 [ext_resource type="PackedScene" uid="uid://bxu4rsdtevblm" path="res://scenes/rooms/level_2.tscn" id="12_w7ab0"]
-[ext_resource type="PackedScene" uid="uid://cjbc5mgm7mmel" path="res://scenes/items/temp_cake.tscn" id="12_x4rsx"]
 [ext_resource type="PackedScene" uid="uid://dr8ffxsvp73mp" path="res://scenes/rooms/level_5.tscn" id="13_l70g1"]
 [ext_resource type="PackedScene" uid="uid://b50irwllqjiat" path="res://scenes/rooms/level_6.tscn" id="14_x4rsx"]
 
@@ -25,7 +23,6 @@ offset_left = 17.0
 offset_top = 12.0
 offset_right = 456.0
 offset_bottom = 39.0
-mouse_filter = 1
 
 [node name="HealthBar2" type="ProgressBar" parent="HUD"]
 visible = false
@@ -33,7 +30,6 @@ offset_left = 17.0
 offset_top = 48.0
 offset_right = 456.0
 offset_bottom = 75.0
-mouse_filter = 1
 
 [node name="HealthBar3" type="ProgressBar" parent="HUD"]
 visible = false
@@ -41,7 +37,6 @@ offset_left = 479.0
 offset_top = 13.0
 offset_right = 918.0
 offset_bottom = 40.0
-mouse_filter = 1
 
 [node name="HealthBar4" type="ProgressBar" parent="HUD"]
 visible = false
@@ -65,30 +60,26 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="TempPotion" parent="." instance=ExtResource("7_7h67w")]
-position = Vector2(680, 334)
-
 [node name="Player" parent="." instance=ExtResource("2_nyb65")]
 position = Vector2(205, 358)
 
 [node name="Camera2D" parent="." instance=ExtResource("11_2kuno")]
 
-[node name="Level1" parent="." instance=ExtResource("10_6hfbt")]
+[node name="Dungeon" type="Node2D" parent="."]
 
-[node name="Level2" parent="." instance=ExtResource("12_w7ab0")]
+[node name="Level1" parent="Dungeon" instance=ExtResource("10_6hfbt")]
+
+[node name="Level2" parent="Dungeon" instance=ExtResource("12_w7ab0")]
 position = Vector2(1155, -1)
 
-[node name="Level3" parent="." instance=ExtResource("11_w7ab0")]
+[node name="Level3" parent="Dungeon" instance=ExtResource("11_w7ab0")]
 position = Vector2(1175, -642)
 
-[node name="Level4" parent="." instance=ExtResource("12_l70g1")]
+[node name="Level4" parent="Dungeon" instance=ExtResource("12_l70g1")]
 position = Vector2(22, -652)
 
-[node name="Level5" parent="." instance=ExtResource("13_l70g1")]
+[node name="Level5" parent="Dungeon" instance=ExtResource("13_l70g1")]
 position = Vector2(2325, -641)
 
-[node name="Level6" parent="." instance=ExtResource("14_x4rsx")]
+[node name="Level6" parent="Dungeon" instance=ExtResource("14_x4rsx")]
 position = Vector2(2327, 6)
-
-[node name="tempCake" parent="." instance=ExtResource("12_x4rsx")]
-position = Vector2(520, 209)
