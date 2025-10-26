@@ -1,14 +1,14 @@
 [gd_scene load_steps=8 format=3 uid="uid://bn2oryar6amqd"]
 
 [ext_resource type="Script" uid="uid://3btteotqdb8p" path="res://scenes/enemy/enemy.gd" id="1_40wdo"]
-[ext_resource type="Texture2D" uid="uid://mm8ik78skmd0" path="res://assets/misc/icon.svg" id="1_a3pup"]
 [ext_resource type="PackedScene" uid="uid://bwhxbjlgkgmoy" path="res://scripts/enemy/turnzone.tscn" id="2_40wdo"]
 [ext_resource type="Script" uid="uid://c3ni3qnlma52i" path="res://scenes/combat.gd" id="2_nbhyu"]
 [ext_resource type="Resource" uid="uid://ikbhm5gjrl3o" path="res://assets/actions/blood_shot.tres" id="3_cwlon"]
 [ext_resource type="Resource" uid="uid://bvnbcxmhpyhx0" path="res://assets/actions/life_steal.tres" id="4_4efjx"]
+[ext_resource type="Texture2D" uid="uid://bvl6dsh4cjsx4" path="res://assets/characters/enemy_battle.PNG" id="5_cwlon"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
-size = Vector2(107, 107)
+size = Vector2(262, 197)
 
 [node name="enemy" type="Node2D"]
 script = ExtResource("1_40wdo")
@@ -17,12 +17,13 @@ currHealth = 15
 maxHealth = 15
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_a3pup")
+position = Vector2(39, -18)
+texture = ExtResource("5_cwlon")
 
 [node name="turnzone" parent="." instance=ExtResource("2_40wdo")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="turnzone"]
-position = Vector2(-0.5, 1.5)
+position = Vector2(40, -6)
 shape = SubResource("RectangleShape2D_epypp")
 
 [connection signal="body_entered" from="turnzone" to="turnzone" method="_on_body_entered"]

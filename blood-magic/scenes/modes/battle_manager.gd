@@ -27,7 +27,7 @@ func _ready():
 	camera.make_current()
 
 func _physics_process(delta: float) -> void:
-	if ai.currHealth <=0:
+	if is_instance_valid(ai) and ai.currHealth <= 0:
 		end_battle()
 
 func next_turn():
@@ -84,7 +84,6 @@ func act(index):
 
 func game_over_fully():
 	print("Game OVER!!!")
-	get_tree().quit()
 	# Game over screen...
 	get_tree().change_scene_to_file("res://scenes/menus/game_over.tscn")
 
@@ -174,7 +173,11 @@ func _on_button_4_pressed() -> void:
 	await get_tree().create_timer(0.5).timeout
 
 func end_battle():
-	get_tree().current_scene.visible = true
-	get_tree().paused = false
-	ai.queue_free()
-	queue_free()
+	var scene = get_tree().current_scene
+	if scene:
+		scene.visible = true
+		get_tree().paused = false
+	if ai and ai.is_inside_tree():
+		ai.queue_free()
+	if is_inside_tree():
+		queue_free()

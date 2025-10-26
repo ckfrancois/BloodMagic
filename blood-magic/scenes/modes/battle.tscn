@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://d26dxwax8qaah"]
+[gd_scene load_steps=4 format=3 uid="uid://d26dxwax8qaah"]
 
 [ext_resource type="Script" uid="uid://cjodfwl24n30d" path="res://scenes/modes/battle_manager.gd" id="1_b1qlt"]
+[ext_resource type="Texture2D" uid="uid://bvl6dsh4cjsx4" path="res://assets/characters/enemy_battle.PNG" id="2_fxb4w"]
+[ext_resource type="Texture2D" uid="uid://dtrqjavnf0mhn" path="res://assets/characters/kaiju_battle.PNG" id="2_mhsnx"]
 
 [node name="Battle" type="Node2D"]
 process_mode = 3
@@ -19,43 +21,63 @@ offset_right = 1143.0
 offset_bottom = 641.0
 mouse_filter = 1
 
+[node name="EnemyBattle" type="Sprite2D" parent="BattleUI"]
+position = Vector2(933, 225)
+scale = Vector2(2, 2)
+texture = ExtResource("2_fxb4w")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="BattleUI"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 202.0
-offset_top = 307.0
-offset_right = 308.0
-offset_bottom = 333.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(5, 5)
+offset_left = 592.0
+offset_top = 379.0
+offset_right = 1080.0
+offset_bottom = 565.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 15
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 15
 
 [node name="Button1" type="Button" parent="BattleUI/HBoxContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Action 1"
 
 [node name="Button3" type="Button" parent="BattleUI/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Action 3"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="BattleUI/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 15
 
 [node name="Button2" type="Button" parent="BattleUI/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Action 2"
 
 [node name="Button4" type="Button" parent="BattleUI/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Action 4"
 
+[node name="KaijuBattle" type="Sprite2D" parent="BattleUI"]
+position = Vector2(110, 503)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_mhsnx")
+
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(579, 365)
+texture_filter = 1
+position = Vector2(573, 316)
 
 [connection signal="pressed" from="BattleUI/HBoxContainer/VBoxContainer/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="BattleUI/HBoxContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]

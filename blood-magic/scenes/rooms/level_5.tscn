@@ -17,7 +17,7 @@ size = Vector2(104, 335)
 size = Vector2(796, 83.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqxiu"]
-size = Vector2(73, 158)
+size = Vector2(73, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5nlw1"]
 size = Vector2(455.25, 64.5)
@@ -52,11 +52,8 @@ shape = SubResource("RectangleShape2D_ql0it")
 [node name="Obstacle4" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle4"]
-position = Vector2(559, 332)
+position = Vector2(559, 346)
 shape = SubResource("RectangleShape2D_wqxiu")
-
-[node name="enemy" parent="." instance=ExtResource("2_k0vap")]
-position = Vector2(562, 173)
 
 [node name="Obstacle 2" type="StaticBody2D" parent="."]
 
@@ -69,9 +66,6 @@ shape = SubResource("RectangleShape2D_5nlw1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle 3"]
 position = Vector2(923.625, 614)
 shape = SubResource("RectangleShape2D_5nlw1")
-
-[node name="enemy2" parent="." instance=ExtResource("2_k0vap")]
-position = Vector2(344, 505)
 
 [node name="Cultistnapper" parent="." instance=ExtResource("2_hvuyn")]
 position = Vector2(962, 240)
@@ -89,5 +83,51 @@ position = Vector2(970, 503)
 
 [node name="TempPotion2" parent="." instance=ExtResource("3_k0vap")]
 position = Vector2(154, 509)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 90.0
+color = Color(0.215686, 0.215686, 0.215686, 1)
+
+[node name="enemy" parent="." instance=ExtResource("2_k0vap")]
+position = Vector2(559, 188)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_top = 253.0
+offset_right = 102.0
+offset_bottom = 645.0
+color = Color(0.215686, 0.215686, 0.215686, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 71.0
+offset_right = 903.0
+offset_bottom = 154.0
+color = Color(0.215686, 0.215686, 0.215686, 1)
+
+[node name="enemy2" parent="ColorRect2" instance=ExtResource("2_k0vap")]
+position = Vector2(299, 252)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 1052.0
+offset_top = 40.0
+offset_right = 1153.0
+offset_bottom = 646.0
+color = Color(0.215686, 0.215686, 0.215686, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 99.0
+offset_top = 582.0
+offset_right = 457.0
+offset_bottom = 646.0
+color = Color(0.215686, 0.215686, 0.215686, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+offset_left = 692.0
+offset_top = 580.0
+offset_right = 1104.0
+offset_bottom = 644.0
+color = Color(0.215686, 0.215686, 0.215686, 1)
 
 [editable path="Cultistnapper"]
