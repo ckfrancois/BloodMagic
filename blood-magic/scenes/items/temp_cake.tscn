@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cjbc5mgm7mmel"]
 
-[ext_resource type="Script" uid="uid://dq8wluk6lojtn" path="res://scripts/items/temp_cake.gd" id="1_7kchw"]
+[ext_resource type="Script" path="res://scripts/items/temp_cake.gd" id="1_7kchw"]
 [ext_resource type="Texture2D" uid="uid://bcf2oohtnx8be" path="res://assets/items/redVelv.png" id="1_mvsaq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7kchw"]
