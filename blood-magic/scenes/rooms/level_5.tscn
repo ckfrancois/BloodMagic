@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dr8ffxsvp73mp"]
+[gd_scene load_steps=10 format=3 uid="uid://dr8ffxsvp73mp"]
 
 [ext_resource type="PackedScene" uid="uid://enih7g5rmlb" path="res://scenes/enemy/cultistnapper.tscn" id="2_hvuyn"]
 [ext_resource type="PackedScene" uid="uid://bn2oryar6amqd" path="res://scenes/enemy/enemy.tscn" id="2_k0vap"]
+[ext_resource type="PackedScene" uid="uid://dwu08pukomrt1" path="res://scenes/items/temp_potion.tscn" id="3_k0vap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvegh"]
 size = Vector2(1152, 90)
@@ -70,17 +71,23 @@ position = Vector2(923.625, 614)
 shape = SubResource("RectangleShape2D_5nlw1")
 
 [node name="enemy2" parent="." instance=ExtResource("2_k0vap")]
-position = Vector2(970, 276)
+position = Vector2(344, 505)
 
 [node name="Cultistnapper" parent="." instance=ExtResource("2_hvuyn")]
-position = Vector2(209, 497)
+position = Vector2(962, 240)
 
 [node name="turnzone" parent="Cultistnapper" index="1"]
 cultist_data = {
-"attacks": ["res://assets/actions/blood_shot.tres", "res://assets/actions/life_steal.tres", "res://assets/actions/replenish.tres", "res://assets/actions/reckless_exchange.tres"],
-"currHealth": 15,
-"maxHealth": 15,
+"attacks": ["res://assets/actions/drain.tres", "res://assets/actions/life_steal.tres", "res://assets/actions/replenish.tres", "res://assets/actions/reckless_exchange.tres"],
+"currHealth": 30,
+"maxHealth": 30,
 "name": "Member 4"
 }
+
+[node name="TempPotion" parent="." instance=ExtResource("3_k0vap")]
+position = Vector2(970, 503)
+
+[node name="TempPotion2" parent="." instance=ExtResource("3_k0vap")]
+position = Vector2(154, 509)
 
 [editable path="Cultistnapper"]

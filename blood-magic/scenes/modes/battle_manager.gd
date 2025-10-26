@@ -26,6 +26,9 @@ func _ready():
 	next_turn()
 	camera.make_current()
 
+func _physics_process(delta: float) -> void:
+	if ai.currHealth <=0:
+		end_battle()
 
 func next_turn():
 	if game_over:
@@ -56,7 +59,7 @@ func act(index):
 		
 		var action_to_cast:combat = ai.combat_action()
 		var cultist_to_attack:int = ai.choose_cultist(player, number_of_cultists - deaths)
-		cultist_to_attack = randi_range(1, number_of_cultists - 1)
+		cultist_to_attack = randi_range(0, number_of_cultists - 1)
 		
 		# Do the action
 		print(action_to_cast.display_name)
@@ -81,11 +84,12 @@ func act(index):
 
 func game_over_fully():
 	print("Game OVER!!!")
+	get_tree().quit()
 	# Game over screen...
 
 func ai_action(action:combat, cultist_index:int):
 	player.cultist[cultist_index]["currHealth"] -= action.damage;
-	ai.currHealth += action.heal;
+	ai.currHealth = min(action.heal+ai.currHealth, ai.maxHealth);
 	ai.currHealth -= action.recoil
 	player.emit_signal("healthUpdate", cultist_index)
 	emit_signal("turnIndex")
@@ -113,7 +117,7 @@ func ai_decide_combat_action () -> combat:
 
 func player_action (action:combat, index:int):
 	ai.currHealth -= action.damage;
-	player.cultist[index]["currHealth"] += action.heal
+	player.cultist[index]["currHealth"] = min(action.heal + player.cultist[index]["currHealth"], player.cultist[index]["maxHealth"])
 	player.cultist[index]["currHealth"] -= action.recoil
 	print(player.cultist[index]["currHealth"], " for ", index)
 	print(current_turn_index)
@@ -167,3 +171,9 @@ func _on_button_4_pressed() -> void:
 		b.disabled = true
 	
 	await get_tree().create_timer(0.5).timeout
+
+func end_battle():
+	get_tree().current_scene.visible = true
+	get_tree().paused = false
+	ai.queue_free()
+	queue_free()

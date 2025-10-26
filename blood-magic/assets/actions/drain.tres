@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_cgwlb")
 display_name = "Drain"
-description = "Deals 7 damage."
-damage = 7
+description = "Deals 6 damage."
+damage = 6
 heal = 0
 recoil = 0
-base_weight = 80
+base_weight = 100
 metadata/_custom_type_script = "uid://c3ni3qnlma52i"
