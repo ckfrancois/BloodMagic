@@ -1,8 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cff8mhxj5v7md"]
+[gd_scene load_steps=13 format=3 uid="uid://61gaeaw2oka"]
 
 [ext_resource type="PackedScene" uid="uid://dbkgrxyrugllw" path="res://scenes/player/player.tscn" id="2_nyb65"]
 [ext_resource type="Script" uid="uid://def32cl786ywg" path="res://scenes/modes/hud.gd" id="3_21gn6"]
-[ext_resource type="PackedScene" uid="uid://cakansakw3rha" path="res://scenes/menus/item_slot.tscn" id="3_fkndb"]
+[ext_resource type="PackedScene" uid="uid://dtxx1yrrkidw6" path="res://scenes/menus/item_slot.tscn" id="3_fkndb"]
 [ext_resource type="PackedScene" uid="uid://dwu08pukomrt1" path="res://scenes/items/temp_potion.tscn" id="7_7h67w"]
 [ext_resource type="PackedScene" uid="uid://co4lceaouqq87" path="res://scenes/rooms/level_1.tscn" id="10_6hfbt"]
 [ext_resource type="PackedScene" uid="uid://br1flxpmbw5ak" path="res://scenes/rooms/camera_2d.tscn" id="11_2kuno"]
@@ -25,6 +25,7 @@ offset_left = 17.0
 offset_top = 12.0
 offset_right = 456.0
 offset_bottom = 39.0
+mouse_filter = 1
 
 [node name="HealthBar2" type="ProgressBar" parent="HUD"]
 visible = false
@@ -32,6 +33,7 @@ offset_left = 17.0
 offset_top = 48.0
 offset_right = 456.0
 offset_bottom = 75.0
+mouse_filter = 1
 
 [node name="HealthBar3" type="ProgressBar" parent="HUD"]
 visible = false
@@ -39,6 +41,7 @@ offset_left = 479.0
 offset_top = 13.0
 offset_right = 918.0
 offset_bottom = 40.0
+mouse_filter = 1
 
 [node name="HealthBar4" type="ProgressBar" parent="HUD"]
 visible = false
