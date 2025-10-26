@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://enih7g5rmlb"]
+
+[ext_resource type="Script" uid="uid://3btteotqdb8p" path="res://scenes/enemy/enemy.gd" id="1_lu14u"]
+[ext_resource type="Script" uid="uid://c3ni3qnlma52i" path="res://scenes/combat.gd" id="2_tw0jv"]
+[ext_resource type="Script" uid="uid://bdowk347wgwx0" path="res://scripts/enemy/turnzone_cultist.gd" id="4_q61cg"]
+[ext_resource type="Resource" uid="uid://ikbhm5gjrl3o" path="res://assets/actions/blood_shot.tres" id="5_1h5p3"]
+[ext_resource type="Texture2D" uid="uid://mm8ik78skmd0" path="res://assets/misc/icon.svg" id="6_hqfkt"]
+[ext_resource type="PackedScene" uid="uid://bwhxbjlgkgmoy" path="res://scripts/enemy/turnzone.tscn" id="7_ggi2a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbke1"]
+size = Vector2(128, 132)
+
+[node name="Cultistnapper" type="Node2D"]
+script = ExtResource("1_lu14u")
+combatActions = Array[ExtResource("2_tw0jv")]([ExtResource("5_1h5p3"), ExtResource("5_1h5p3"), ExtResource("5_1h5p3")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("6_hqfkt")
+
+[node name="turnzone" parent="." instance=ExtResource("7_ggi2a")]
+script = ExtResource("4_q61cg")
+cultist_data = {
+"attacks": ["res://assets/actions/blood_shot.tres", "res://assets/actions/life_steal.tres", "res://assets/actions/replenish.tres", "res://assets/actions/reckless_exchange.tres"],
+"currHealth": 0,
+"maxHealth": 0,
+"name": ""
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="turnzone"]
+shape = SubResource("RectangleShape2D_dbke1")
+
+[connection signal="body_entered" from="turnzone" to="turnzone" method="_on_body_entered"]

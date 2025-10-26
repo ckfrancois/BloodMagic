@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdvo3na0dlg2h"]
+[gd_scene load_steps=9 format=3 uid="uid://bdvo3na0dlg2h"]
 
 [ext_resource type="PackedScene" uid="uid://dwu08pukomrt1" path="res://scenes/items/temp_potion.tscn" id="1_w2080"]
 [ext_resource type="PackedScene" uid="uid://bn2oryar6amqd" path="res://scenes/enemy/enemy.tscn" id="2_207eh"]
+[ext_resource type="PackedScene" uid="uid://enih7g5rmlb" path="res://scenes/enemy/cultistnapper.tscn" id="3_207eh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvegh"]
 size = Vector2(1152, 90)
@@ -75,3 +76,16 @@ position = Vector2(299, 438)
 
 [node name="enemy3" parent="." instance=ExtResource("2_207eh")]
 position = Vector2(299, 171)
+
+[node name="Cultistnapper" parent="." instance=ExtResource("3_207eh")]
+position = Vector2(530, 466)
+
+[node name="turnzone" parent="Cultistnapper" index="1"]
+cultist_data = {
+"attacks": ["res://assets/actions/blood_shot.tres", "res://assets/actions/life_steal.tres", "res://assets/actions/replenish.tres", "res://assets/actions/reckless_exchange.tres"],
+"currHealth": 10,
+"maxHealth": 10,
+"name": "member 3"
+}
+
+[editable path="Cultistnapper"]

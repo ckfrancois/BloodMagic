@@ -9,5 +9,5 @@ description = "Deals 7 damage."
 damage = 7
 heal = 0
 recoil = 0
-base_weight = 100
+base_weight = 80
 metadata/_custom_type_script = "uid://c3ni3qnlma52i"
