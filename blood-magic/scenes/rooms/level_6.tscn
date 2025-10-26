@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b50irwllqjiat"]
+[gd_scene load_steps=7 format=3 uid="uid://b50irwllqjiat"]
 
+[ext_resource type="PackedScene" uid="uid://enih7g5rmlb" path="res://scenes/enemy/cultistnapper.tscn" id="1_182hn"]
 [ext_resource type="PackedScene" uid="uid://bn2oryar6amqd" path="res://scenes/enemy/enemy.tscn" id="1_jokmq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvegh"]
@@ -40,9 +41,6 @@ shape = SubResource("RectangleShape2D_hnt83")
 position = Vector2(579, 318)
 shape = SubResource("RectangleShape2D_ql0it")
 
-[node name="enemy" parent="." instance=ExtResource("1_jokmq")]
-position = Vector2(970, 454)
-
 [node name="Obstacle 2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle 2"]
@@ -54,3 +52,12 @@ shape = SubResource("RectangleShape2D_5nlw1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle 3"]
 position = Vector2(925, 31)
 shape = SubResource("RectangleShape2D_5nlw1")
+
+[node name="Cultistnapper" parent="." instance=ExtResource("1_182hn")]
+position = Vector2(589, 461)
+
+[node name="enemy" parent="." instance=ExtResource("1_jokmq")]
+position = Vector2(897, 192)
+
+[node name="enemy2" parent="." instance=ExtResource("1_jokmq")]
+position = Vector2(309, 199)
