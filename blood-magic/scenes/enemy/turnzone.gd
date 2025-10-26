@@ -8,6 +8,6 @@ func _on_body_entered(body: CharacterBody2D) -> void:
 	
 	get_tree().root.add_child(battle_instance)
 	battle_instance.ai = get_parent()
-	get_tree().paused = true
+	print(battle_instance.ai)
 	get_tree().current_scene.visible = false
-	get_tree().battle_scene.visible = true
+	get_tree().paused = true
