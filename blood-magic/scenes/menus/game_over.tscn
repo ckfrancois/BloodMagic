@@ -2,9 +2,6 @@
 
 [ext_resource type="Script" uid="uid://d3018i2y17hcp" path="res://game_over.gd" id="1_ujjcl"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_asori"]
-bg_color = Color(0.380776, 0.0395774, 0, 1)
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wqhvx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbwuq"]
@@ -31,6 +28,9 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_size = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_asori"]
+bg_color = Color(0.380776, 0.0395774, 0, 1)
+
 [node name="GameOver" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -38,16 +38,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_ujjcl")
-
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_asori")
 
 [node name="Game Over" type="Label" parent="."]
 layout_mode = 1
@@ -106,6 +98,17 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_tbwuq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_racf3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7m3ot")
 text = "Quit"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_left = 358.0
+offset_top = 417.0
+offset_right = 794.0
+offset_bottom = 417.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_asori")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
