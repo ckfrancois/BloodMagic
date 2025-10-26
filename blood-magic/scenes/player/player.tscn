@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbkgrxyrugllw"]
+[gd_scene load_steps=5 format=3 uid="uid://dbkgrxyrugllw"]
 
-[ext_resource type="Script" path="res://scripts/player/character_body_2d.gd" id="1_dovo2"]
+[ext_resource type="Script" uid="uid://c3dso5fx1mgoc" path="res://scripts/player/character_body_2d.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://mm8ik78skmd0" path="res://assets/misc/icon.svg" id="2_gmlin"]
+[ext_resource type="AudioStream" uid="uid://b5a6hbf26gpoq" path="res://Audio/SFX/Player/Walking.mp3" id="3_gmlin"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
 size = Vector2(19.2308, 19.0769)
@@ -16,3 +17,9 @@ texture = ExtResource("2_gmlin")
 position = Vector2(-0.499999, -0.999999)
 scale = Vector2(6.5, 6.5)
 shape = SubResource("RectangleShape2D_hqtel")
+
+[node name="AudioStreamPlayer_Walking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gmlin")
+bus = &"SFX"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
