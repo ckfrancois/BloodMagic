@@ -89,7 +89,7 @@ func game_over_fully():
 
 func ai_action(action:combat, cultist_index:int):
 	player.cultist[cultist_index]["currHealth"] -= action.damage;
-	ai.currHealth += action.heal;
+	ai.currHealth = min(action.heal+ai.currHealth, ai.maxHealth);
 	ai.currHealth -= action.recoil
 	player.emit_signal("healthUpdate", cultist_index)
 	emit_signal("turnIndex")
@@ -117,7 +117,7 @@ func ai_decide_combat_action () -> combat:
 
 func player_action (action:combat, index:int):
 	ai.currHealth -= action.damage;
-	player.cultist[index]["currHealth"] += action.heal
+	player.cultist[index]["currHealth"] = min(action.heal + player.cultist[index]["currHealth"], player.cultist[index]["maxHealth"])
 	player.cultist[index]["currHealth"] -= action.recoil
 	print(player.cultist[index]["currHealth"], " for ", index)
 	print(current_turn_index)
