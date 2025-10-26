@@ -17,10 +17,11 @@ var numCultist:=0
 @export var combatActions: Array[combat]
 
 func _ready():
+	EventBus.player = self
 	collectCultist({"name": "leader",
 	"currHealth": 10,
 	"maxHealth":10,
-	"attacks": ["res://assets/actions/blood_shot.tres", "res://assets/actions/life_steal.tres", "res://assets/actions/replenish.tres", "res://assets/actions/reckless_exchange.tres"]})
+	"attacks": [load("res://assets/actions/blood_shot.tres"), load("res://assets/actions/life_steal.tres"), load("res://assets/actions/replenish.tres"), load("res://assets/actions/reckless_exchange.tres")]})
 
 func _physics_process(delta: float) -> void:
 	var moveX := Input.get_axis("Left", "Right")

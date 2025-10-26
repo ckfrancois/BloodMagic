@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_hhkht")
-display_name = ""
-description = ""
+display_name = "Reckless Exchange"
+description = "Reckless Exchange. Deal 20 damage, take 13."
 damage = 20
 heal = 0
 recoil = 13

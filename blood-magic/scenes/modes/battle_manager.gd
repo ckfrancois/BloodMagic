@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var camera := $Camera2D
 
-@export var player : Node2D
+var player : Node2D = EventBus.player
 @export var ai : Node2D
 
 var turn_order = [0, 1, 2, 3, 4] # enemy and players
@@ -12,14 +12,17 @@ var number_of_cultists # needs to be updated
 var character : bool = false
 var game_over : bool = false
 
-@onready var buttons = [$Button1, $Button2, $Button3, $Button4]
+@onready var buttons: Array
 var current_moves : Array
 
 func _ready():
+	buttons = [$BattleUI/HBoxContainer/VBoxContainer/Button1, $BattleUI/HBoxContainer/VBoxContainer2/Button2, $BattleUI/HBoxContainer/VBoxContainer/Button3, $BattleUI/HBoxContainer/VBoxContainer2/Button4]
+	number_of_cultists = player.numCultist
+	print(number_of_cultists)
+	print("hiii")
 	next_turn()
 	camera.make_current()
-	
-	number_of_cultists = 3
+
 
 func next_turn():
 	if game_over:
@@ -58,18 +61,22 @@ func act(index):
 func player_combat_action(index : int):
 	await get_tree().create_timer(0.5).timeout
 	
+	print(player.cultist[index - 1]["attacks"][3])
+		
 	for i in 4:
+		print(player.cultist[index - 1])
 		# Set current moves to current_moves
-		current_moves[i] = player.cultist[index - 1].dict[0]
+		current_moves.insert(i, player.cultist[index - 1]["attacks"][i])
 		
 		# Set buttons to correct moves
 		buttons[i].text = current_moves[i].display_name
 		
+		print(current_moves[i].display_name)
+		print(buttons[i].text)
+		
 		# Enable buttons
 		for b in buttons:
 			b.disabled = false
-	
-	
 	
 func ai_decide_combat_action () -> combat:
 	return null
