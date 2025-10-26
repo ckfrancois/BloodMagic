@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dm4w0w71lecxy"
+path="res://.godot/imported/Background music main walking.mp3-43cf3342c16febb3a54a381301d3ca6a.mp3str"
+
+[deps]
+
+source_file="res://Audio/music/Background music main walking.mp3"
+dest_files=["res://.godot/imported/Background music main walking.mp3-43cf3342c16febb3a54a381301d3ca6a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
