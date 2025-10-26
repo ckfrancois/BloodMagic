@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cjbc5mgm7mmel"]
 
-[ext_resource type="Script" uid="uid://dq8wluk6lojtn" path="res://scripts/items/temp_cake.gd" id="1_7kchw"]
+[ext_resource type="Script" path="res://scripts/items/temp_cake.gd" id="1_7kchw"]
 [ext_resource type="Texture2D" uid="uid://bcf2oohtnx8be" path="res://assets/items/redVelv.png" id="1_mvsaq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7kchw"]
@@ -8,6 +8,13 @@ radius = 42.0595
 
 [node name="tempCake" type="Area2D"]
 script = ExtResource("1_7kchw")
+itemData = {
+"Description": "Heals all followers",
+"heal amount": 10,
+"icon": ExtResource("1_mvsaq"),
+"name": "TempCake",
+"type": "all"
+}
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.035, 0.035)

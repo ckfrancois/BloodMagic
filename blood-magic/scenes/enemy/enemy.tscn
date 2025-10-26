@@ -1,19 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://bn2oryar6amqd"]
+[gd_scene load_steps=8 format=3 uid="uid://bn2oryar6amqd"]
 
 [ext_resource type="Script" uid="uid://3btteotqdb8p" path="res://scenes/enemy/enemy.gd" id="1_40wdo"]
 [ext_resource type="Texture2D" uid="uid://mm8ik78skmd0" path="res://assets/misc/icon.svg" id="1_a3pup"]
 [ext_resource type="PackedScene" uid="uid://bwhxbjlgkgmoy" path="res://scripts/enemy/turnzone.tscn" id="2_40wdo"]
 [ext_resource type="Script" uid="uid://c3ni3qnlma52i" path="res://scenes/combat.gd" id="2_nbhyu"]
-[ext_resource type="Resource" uid="uid://1t0a0rn30cqi" path="res://assets/actions/drain.tres" id="3_13gj6"]
+[ext_resource type="Resource" uid="uid://ikbhm5gjrl3o" path="res://assets/actions/blood_shot.tres" id="3_cwlon"]
 [ext_resource type="Resource" uid="uid://bvnbcxmhpyhx0" path="res://assets/actions/life_steal.tres" id="4_4efjx"]
-[ext_resource type="Resource" uid="uid://c5veuha86g3sw" path="res://assets/actions/reckless_exchange.tres" id="5_hvxgb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(107, 107)
 
 [node name="enemy" type="Node2D"]
 script = ExtResource("1_40wdo")
-combatActions = Array[ExtResource("2_nbhyu")]([ExtResource("3_13gj6"), ExtResource("4_4efjx"), ExtResource("5_hvxgb")])
+combatActions = Array[ExtResource("2_nbhyu")]([ExtResource("3_cwlon"), ExtResource("4_4efjx"), ExtResource("4_4efjx")])
+currHealth = 15
+maxHealth = 15
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_a3pup")

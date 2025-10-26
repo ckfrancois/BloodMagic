@@ -9,8 +9,8 @@ radius = 37.0135
 [node name="TempPotion" type="Area2D"]
 script = ExtResource("1_ws5s1")
 itemData = {
-"Description": "Heals one follower",
-"heal amount": 5,
+"Description": "Heals one follower. Press Space then num",
+"heal amount": 10,
 "icon": ExtResource("2_xjodt"),
 "name": "TempPotion",
 "type": "single"

@@ -23,7 +23,7 @@ func _ready():
 	collectCultist({"name": "leader",
 	"currHealth": 30,
 	"maxHealth":30,
-	"attacks": [load("res://assets/actions/blood_shot.tres"), load("res://assets/actions/life_steal.tres"), load("res://assets/actions/replenish.tres"), load("res://assets/actions/reckless_exchange.tres")]})
+	"attacks": [load("res://assets/actions/blood_shot.tres"), load("res://assets/actions/life_steal.tres"), load("res://assets/actions/replenish.tres"), load("res://assets/actions/drain.tres")]})
 
 func _physics_process(delta: float) -> void:
 	var moveX := Input.get_axis("Left", "Right")
@@ -40,8 +40,6 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-	if Input.is_action_just_pressed("Up"):
-		cultistHurt()
 
 func _combat_action(action : combat , enemy : Node2D):
 	pass
@@ -55,13 +53,6 @@ func collectCultist(data: Dictionary):
 	cultist.append(data)
 	emit_signal("healthChanged", cultist[numCultist], numCultist)
 	numCultist += 1
-
-func cultistHurt():
-	print(numCultist)
-	var x = randi_range(0,numCultist - 1)
-	cultist[x]["currHealth"] -= 1
-	emit_signal("healthChanged", cultist[x], x)
-	
 
 func use_item():
 	collectItem({})
