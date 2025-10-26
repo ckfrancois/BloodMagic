@@ -32,6 +32,7 @@ func _physics_process(delta: float) -> void:
 
 func next_turn():
 	if game_over:
+		game_over_fully()
 		return
 		
 	
@@ -73,7 +74,6 @@ func act(index):
 		# If all party members are dead, game over
 		if deaths >= number_of_cultists:
 			game_over = true
-			game_over_fully()
 		
 		await get_tree().create_timer(0.5).timeout
 		next_turn()
@@ -86,6 +86,7 @@ func game_over_fully():
 	print("Game OVER!!!")
 	get_tree().quit()
 	# Game over screen...
+	get_tree().change_scene_to_file("res://scenes/menus/game_over.tscn")
 
 func ai_action(action:combat, cultist_index:int):
 	player.cultist[cultist_index]["currHealth"] -= action.damage;
@@ -107,6 +108,7 @@ func player_combat_action(index : int):
 		
 		# Set buttons to correct moves
 		buttons[i].text = current_moves[i].display_name
+		buttons[i].set_tooltip_text(current_moves[i].description)
 		
 		# Enable buttons
 		for b in buttons:
@@ -129,7 +131,6 @@ func player_action (action:combat, index:int):
 	# If all party members are dead, game over
 	if deaths >= number_of_cultists:
 		game_over = true
-		game_over_fully()
 	
 	player.emit_signal("healthUpdate", index)
 	emit_signal("turnIndex")
