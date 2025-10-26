@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="combat" load_steps=2 format=3 uid="uid://qr2meevjf5wt"]
+[gd_resource type="Resource" script_class="combat" load_steps=2 format=3 uid="uid://dn58ly2rn6gld"]
 
 [ext_resource type="Script" uid="uid://c3ni3qnlma52i" path="res://scenes/combat.gd" id="1_s7431"]
 
 [resource]
 script = ExtResource("1_s7431")
-display_name = "replenish"
+display_name = "Replenish"
 description = "Focus on your breathing and gain 6 health"
 damage = 0
 heal = 6

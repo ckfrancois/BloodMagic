@@ -16,6 +16,7 @@ var selecting = false
 func _ready() -> void:
 	player.itemCollected.connect(_on_item_collected)
 	player.healthChanged.connect(_on_health_changed)
+	player.healthUpdate.connect(update_health)
 	cultHealth = [health1,health2,health3,health4]
 	print(player.heldItem)
 
@@ -53,6 +54,12 @@ func updateHealth(data: Dictionary, num: int):
 	cultHealth[num].value = data["currHealth"]
 	cultHealth[num].max_value = data["maxHealth"]
 	cultHealth[num].visible = true
+
+func update_health():
+	for i in player.numCultist:
+		cultHealth[i].value = player.cultist[i]["currHealth"]
+		cultHealth[i].max_value = player.cultist[i]["maxHealth"]
+		cultHealth[i].visible = true
 
 func heal_all():
 	for i in range(MAX_MEMBERS):

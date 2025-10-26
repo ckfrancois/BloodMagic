@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_js6at")
-display_name = "Blood Shoot"
+display_name = "Blood Shot"
 description = "Basic Attack, Deal 5 damage take 3"
 damage = 5
 heal = 0

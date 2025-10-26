@@ -48,3 +48,5 @@ shape = SubResource("RectangleShape2D_a1jo5")
 
 [node name="enemy" parent="." instance=ExtResource("1_hnt83")]
 position = Vector2(922, 188)
+currHealth = 20
+maxHealth = 20

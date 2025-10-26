@@ -8,19 +8,21 @@ var heldItem: Dictionary
 # Whenever health is changed for a cultist, emit a corresponding signal
 signal healthChanged(Dictionary, int)
 
+signal healthUpdate
+
 #var currentHealth:Array[int] = [0,0,0,0] # Starting values
 #var maxHealth:Array[int] = [100,100,100,100] # Placeholder values
 
-var cultist:Array[Dictionary] = [{},{},{},{}]
-var numCultist:=0
+var cultist:Array[Dictionary]
+var numCultist = 0
 
 @export var combatActions: Array[combat]
 
 func _ready():
 	EventBus.player = self
 	collectCultist({"name": "leader",
-	"currHealth": 10,
-	"maxHealth":10,
+	"currHealth": 30,
+	"maxHealth":30,
 	"attacks": [load("res://assets/actions/blood_shot.tres"), load("res://assets/actions/life_steal.tres"), load("res://assets/actions/replenish.tres"), load("res://assets/actions/reckless_exchange.tres")]})
 
 func _physics_process(delta: float) -> void:
@@ -50,14 +52,13 @@ func collectItem(data: Dictionary):
 	
 
 func collectCultist(data: Dictionary):
-	while !cultist[numCultist].is_empty():
-		numCultist += 1
-	cultist[numCultist] = data
+	cultist.append(data)
 	emit_signal("healthChanged", cultist[numCultist], numCultist)
+	numCultist += 1
 
 func cultistHurt():
 	print(numCultist)
-	var x = randi_range(0,numCultist)
+	var x = randi_range(0,numCultist - 1)
 	cultist[x]["currHealth"] -= 1
 	emit_signal("healthChanged", cultist[x], x)
 	
