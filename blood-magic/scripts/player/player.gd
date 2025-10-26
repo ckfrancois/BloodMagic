@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 signal itemCollected(Dictionary)
 
+@onready var sprite = $Sprite2D
+
 const SPEED = 300.0
 var heldItem: Dictionary
 
@@ -24,10 +26,15 @@ func _ready():
 	"currHealth": 30,
 	"maxHealth":30,
 	"attacks": [load("res://assets/actions/blood_shot.tres"), load("res://assets/actions/life_steal.tres"), load("res://assets/actions/replenish.tres"), load("res://assets/actions/drain.tres")]})
+	sprite.play("default")
 
 func _physics_process(delta: float) -> void:
 	var moveX := Input.get_axis("Left", "Right")
 	var moveY := Input.get_axis("Up","Down")
+	
+	if moveX != 0:
+		sprite.flip_h = moveX < 0
+	
 	if moveX:
 		velocity.x = moveX * SPEED
 	else:
