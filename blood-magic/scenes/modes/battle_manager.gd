@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var camera := $Camera2D
 
 @export var player : Node2D
 @export var ai : Node2D
@@ -14,6 +15,7 @@ var game_over : bool = false
 
 func _ready():
 	next_turn()
+	camera.make_current()
 
 func next_turn():
 	if game_over:
