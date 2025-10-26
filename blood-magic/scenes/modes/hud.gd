@@ -55,11 +55,10 @@ func updateHealth(data: Dictionary, num: int):
 	cultHealth[num].max_value = data["maxHealth"]
 	cultHealth[num].visible = true
 
-func update_health():
-	for i in player.numCultist:
-		cultHealth[i].value = player.cultist[i]["currHealth"]
-		cultHealth[i].max_value = player.cultist[i]["maxHealth"]
-		cultHealth[i].visible = true
+func update_health(num: int):
+	cultHealth[num].value = player.cultist[num]["currHealth"]
+	cultHealth[num].max_value = player.cultist[num]["maxHealth"]
+	cultHealth[num].visible = true
 
 func heal_all():
 	for i in range(MAX_MEMBERS):

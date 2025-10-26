@@ -82,10 +82,10 @@ position = Vector2(530, 466)
 
 [node name="turnzone" parent="Cultistnapper" index="1"]
 cultist_data = {
-"attacks": ["res://assets/actions/blood_shot.tres", "res://assets/actions/life_steal.tres", "res://assets/actions/replenish.tres", "res://assets/actions/reckless_exchange.tres"],
-"currHealth": 10,
-"maxHealth": 10,
-"name": "member 3"
+"attacks": ["res://assets/actions/blood_shot.tres", "res://assets/actions/life_steal.tres", "res://assets/actions/drain.tres", "res://assets/actions/reckless_exchange.tres"],
+"currHealth": 0,
+"maxHealth": 0,
+"name": ""
 }
 
 [editable path="Cultistnapper"]

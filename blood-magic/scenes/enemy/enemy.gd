@@ -20,7 +20,8 @@ func choose_cultist(player : CharacterBody2D, num : int):
 	
 	# Append the healths
 	for element in player.cultist: # edit
-		weights.append(1 / element["currHealth"]) # flips the weights
+		if(element["currHealth"] > 0):
+			weights.append(1 / element["currHealth"]) # flips the weights
 		
 	var ran = rng.rand_weighted(weights)
 	if ran < 0:

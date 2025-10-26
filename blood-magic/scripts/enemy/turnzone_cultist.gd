@@ -4,7 +4,7 @@ extends Area2D
 	"name": "",
 	"currHealth": 0,
 	"maxHealth": 0,
-	"attacks": ["res://assets/actions/blood_shot.tres", "res://assets/actions/life_steal.tres", "res://assets/actions/replenish.tres", "res://assets/actions/reckless_exchange.tres"]}
+	"attacks": ["res://assets/actions/blood_shot.tres", "res://assets/actions/life_steal.tres", "res://assets/actions/drain.tres", "res://assets/actions/reckless_exchange.tres"]}
 
 func _on_body_entered(body: CharacterBody2D) -> void:
 	print("Turn time!")

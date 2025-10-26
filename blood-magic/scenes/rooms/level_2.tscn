@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxu4rsdtevblm"]
+[gd_scene load_steps=13 format=3 uid="uid://bxu4rsdtevblm"]
 
 [ext_resource type="PackedScene" uid="uid://bn2oryar6amqd" path="res://scenes/enemy/enemy.tscn" id="1_kpwdj"]
 [ext_resource type="PackedScene" uid="uid://dwu08pukomrt1" path="res://scenes/items/temp_potion.tscn" id="2_w1t45"]
 [ext_resource type="PackedScene" uid="uid://enih7g5rmlb" path="res://scenes/enemy/cultistnapper.tscn" id="3_w1t45"]
+[ext_resource type="Script" uid="uid://c3ni3qnlma52i" path="res://scenes/combat.gd" id="4_yfbyw"]
+[ext_resource type="Resource" uid="uid://ikbhm5gjrl3o" path="res://assets/actions/blood_shot.tres" id="5_b4p2x"]
+[ext_resource type="Resource" uid="uid://1t0a0rn30cqi" path="res://assets/actions/drain.tres" id="6_3uatd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wo1ko"]
 size = Vector2(862, 89.5)
@@ -77,13 +80,14 @@ position = Vector2(730, 516)
 
 [node name="Cultistnapper" parent="." instance=ExtResource("3_w1t45")]
 position = Vector2(958, 168)
+combatActions = Array[ExtResource("4_yfbyw")]([ExtResource("5_b4p2x"), ExtResource("6_3uatd"), ExtResource("5_b4p2x")])
 
 [node name="turnzone" parent="Cultistnapper" index="1"]
 cultist_data = {
-"attacks": ["res://assets/actions/blood_shot.tres", "res://assets/actions/life_steal.tres", "res://assets/actions/replenish.tres", "res://assets/actions/reckless_exchange.tres"],
-"currHealth": 7,
-"maxHealth": 7,
-"name": "cat"
+"attacks": ["res://assets/actions/blood_shot.tres", "res://assets/actions/life_steal.tres", "res://assets/actions/drain.tres", "res://assets/actions/reckless_exchange.tres"],
+"currHealth": 0,
+"maxHealth": 0,
+"name": ""
 }
 
 [editable path="Cultistnapper"]
