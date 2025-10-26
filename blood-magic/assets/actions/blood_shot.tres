@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_js6at")
 display_name = "Blood Shot"
-description = "Basic Attack, Deal 5 damage take 3"
-damage = 5
+description = "Basic Attack, Deal 7 damage take 3"
+damage = 7
 heal = 0
 recoil = 3
-base_weight = 120
+base_weight = 110
 metadata/_custom_type_script = "uid://c3ni3qnlma52i"

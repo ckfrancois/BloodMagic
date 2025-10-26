@@ -18,7 +18,6 @@ func _ready() -> void:
 	player.healthChanged.connect(_on_health_changed)
 	player.healthUpdate.connect(update_health)
 	cultHealth = [health1,health2,health3,health4]
-	print(player.heldItem)
 
 func _process(delta) -> void:
 	if !player.heldItem.is_empty():
@@ -30,7 +29,7 @@ func _process(delta) -> void:
 				selecting = true
 		
 		if selecting:
-			for i in range(MAX_MEMBERS):
+			for i in range(player.cultist.size()):
 				if !player.cultist[i].is_empty():
 					if Input.is_action_just_pressed("heal_%d" % (i+1)):
 						heal_one(i)
@@ -61,7 +60,7 @@ func update_health(num: int):
 	cultHealth[num].visible = true
 
 func heal_all():
-	for i in range(MAX_MEMBERS):
+	for i in range(player.culturist.size()):
 		if !player.cultist[i].is_empty():
 			player.cultist[i]["currHealth"] = min(player.cultist[i]["maxHealth"], player.cultist[i]["currHealth"] + player.heldItem["heal amount"])
 			updateHealth(player.cultist[i],i)

@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b50irwllqjiat"]
+[gd_scene load_steps=10 format=3 uid="uid://b50irwllqjiat"]
 
 [ext_resource type="PackedScene" uid="uid://enih7g5rmlb" path="res://scenes/enemy/cultistnapper.tscn" id="1_182hn"]
 [ext_resource type="PackedScene" uid="uid://bn2oryar6amqd" path="res://scenes/enemy/enemy.tscn" id="1_jokmq"]
+[ext_resource type="Script" uid="uid://c3ni3qnlma52i" path="res://scenes/combat.gd" id="2_cc6wp"]
+[ext_resource type="Resource" uid="uid://dn58ly2rn6gld" path="res://assets/actions/replenish.tres" id="3_6dktl"]
+[ext_resource type="Resource" uid="uid://bvnbcxmhpyhx0" path="res://assets/actions/life_steal.tres" id="4_t72vq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvegh"]
 size = Vector2(1152, 90)
@@ -55,9 +58,28 @@ shape = SubResource("RectangleShape2D_5nlw1")
 
 [node name="Cultistnapper" parent="." instance=ExtResource("1_182hn")]
 position = Vector2(589, 461)
+combatActions = Array[ExtResource("2_cc6wp")]([ExtResource("3_6dktl"), ExtResource("3_6dktl"), ExtResource("4_t72vq")])
+currHealth = 45
+maxHealth = 45
+
+[node name="turnzone" parent="Cultistnapper" index="1"]
+cultist_data = {
+"attacks": ["res://assets/actions/blood_shot.tres", "res://assets/actions/life_steal.tres", "res://assets/actions/replenish.tres", "res://assets/actions/reckless_exchange.tres"],
+"currHealth": 35,
+"maxHealth": 35,
+"name": "Member 4"
+}
 
 [node name="enemy" parent="." instance=ExtResource("1_jokmq")]
-position = Vector2(897, 192)
+position = Vector2(834, 195)
 
 [node name="enemy2" parent="." instance=ExtResource("1_jokmq")]
 position = Vector2(309, 199)
+
+[node name="enemy3" parent="." instance=ExtResource("1_jokmq")]
+position = Vector2(184, 469)
+
+[node name="enemy4" parent="." instance=ExtResource("1_jokmq")]
+position = Vector2(972, 473)
+
+[editable path="Cultistnapper"]

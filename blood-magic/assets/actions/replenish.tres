@@ -9,5 +9,5 @@ description = "Focus on your breathing and gain 6 health"
 damage = 0
 heal = 6
 recoil = 0
-base_weight = 100
+base_weight = 90
 metadata/_custom_type_script = "uid://c3ni3qnlma52i"
