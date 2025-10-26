@@ -29,6 +29,7 @@ func _ready():
 
 func next_turn():
 	if game_over:
+		game_over_fully()
 		return
 		
 	
@@ -56,7 +57,7 @@ func act(index):
 		
 		var action_to_cast:combat = ai.combat_action()
 		var cultist_to_attack:int = ai.choose_cultist(player, number_of_cultists - deaths)
-		cultist_to_attack = randi_range(1, number_of_cultists - 1)
+		cultist_to_attack = randi_range(0, number_of_cultists - 1)
 		
 		# Do the action
 		print(action_to_cast.display_name)
@@ -70,7 +71,6 @@ func act(index):
 		# If all party members are dead, game over
 		if deaths >= number_of_cultists:
 			game_over = true
-			game_over_fully()
 		
 		await get_tree().create_timer(0.5).timeout
 		next_turn()
@@ -82,6 +82,7 @@ func act(index):
 func game_over_fully():
 	print("Game OVER!!!")
 	# Game over screen...
+	get_tree().change_scene_to_file("res://scenes/menus/game_over.tscn")
 
 func ai_action(action:combat, cultist_index:int):
 	player.cultist[cultist_index]["currHealth"] -= action.damage;
@@ -103,6 +104,7 @@ func player_combat_action(index : int):
 		
 		# Set buttons to correct moves
 		buttons[i].text = current_moves[i].display_name
+		buttons[i].set_tooltip_text(current_moves[i].description)
 		
 		# Enable buttons
 		for b in buttons:
@@ -125,7 +127,6 @@ func player_action (action:combat, index:int):
 	# If all party members are dead, game over
 	if deaths >= number_of_cultists:
 		game_over = true
-		game_over_fully()
 	
 	player.emit_signal("healthUpdate", index)
 	emit_signal("turnIndex")
